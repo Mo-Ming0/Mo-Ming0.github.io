@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活动小记 - 政治学社</title>
+    
+    <!-- 只引入导航栏样式 -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- 引入详情页专用样式 -->
+    <link rel="stylesheet" href="css/activity_MC.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <a href="index.html" class="logo-link">
+            <img src="image/logo.png" alt="政治学社" class="logo" width="120" height="auto">
+        </a>
+        
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="index.html#section2">关于</a></li>
+            <li><a href="index.html#activities">社团活动</a></li>
+        </ul>
+    </nav>
+    
+    <!-- 页面内容 - 使用普通容器而不是全屏容器 -->
+    <div class="page-container">
+        <!-- 返回按钮 -->
+        <div class="back-button">
+            <a href="index.html#activities" class="back-link">
+                <span>←</span>
+                返回活动列表
+            </a>
+        </div>
+        
+        <!-- 活动标题 -->
+        <div class="activity-header">
+            <div class="activity-title">
+                <h1>活动小记</h1>
+                <p class="activity-description">活动时间线与历史记录</p>
+            </div>
+            <div class="activity-tags">
+                <span class="activity-tag">-</span>
+                <span class="activity-tag">-</span>
+                <span class="activity-tag">-</span>
+            </div>
+        </div>
+        
+        <!-- 时间轴内容 -->
+        <div class="timeline">
+            <!-- 项目1 -->
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    <span>📅</span>
+                    <span>20--年-月-日</span>
+                </div>
+                <h3 class="timeline-title">敬请期待</h3>
+                <p class="timeline-description">
+                   -
+                </p>
+                <div class="photo-container">
+                    <!-- 这里应该是实际图片，暂时用占位 -->
+                    <div style="width:100%; height:100%; background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                </div>
+                <div class="photo-caption">-</div>
+            </div>
+            
+            
+    </div>
+    
+    <script>
+        // 导航栏交互
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.getElementById('navLinks');
+            
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

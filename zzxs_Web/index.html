@@ -1,0 +1,231 @@
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8"/>
+        <script src="js/home.js" defer></script>
+        <script src="js/countdown.js" defer></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>政治学社</title>
+        <link rel="stylesheet" href="css/main.css">
+        
+        <style>
+            /* 可以在这里添加一些临时样式或覆盖样式 */
+            .navbar {
+                background-color: aliceblue;
+            }
+            
+            /* 按钮悬停效果增强 */
+            .nav-links a {
+                transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            }
+        </style>
+        <script>
+            function toggleMenu() {
+                const navLinks = document.getElementById('navLinks');
+                const hamburger = document.querySelector('.hamburger');
+                
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            }
+            
+            // 点击外部关闭菜单
+            document.addEventListener('DOMContentLoaded', function() {
+                document.addEventListener('click', function(event) {
+                    const navLinks = document.getElementById('navLinks');
+                    const hamburger = document.querySelector('.hamburger');
+                    
+                    if (!navLinks.contains(event.target) && 
+                        !hamburger.contains(event.target)) {
+                        navLinks.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    }
+                });
+            });
+            
+            // 为按钮添加点击效果
+            document.addEventListener('DOMContentLoaded', function() {
+                const buttons = document.querySelectorAll('.nav-links a');
+                
+                buttons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        // 添加点击效果
+                        this.style.transform = 'translateY(0)';
+                        this.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
+                        
+                        // 短暂延迟后恢复
+                        setTimeout(() => {
+                            this.style.transform = '';
+                            this.style.boxShadow = '';
+                        }, 200);
+                        
+                        // 如果是移动端，点击后关闭菜单
+                        if (window.innerWidth <= 768) {
+                            const navLinks = document.getElementById('navLinks');
+                            const hamburger = document.querySelector('.hamburger');
+                            navLinks.classList.remove('active');
+                            hamburger.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+    
+    <body>
+        <nav class="navbar">
+            <div class="logo-container">
+        <img src="image/logo.webp" alt="政治学社" class="logo" width="120" height="auto">
+        <div class="club-name">
+            <span class="char">政</span>
+            <span class="char">治</span>
+            <span class="char red-char">学</span>
+            <span class="char">社</span>
+        </div>
+            
+            <!-- 汉堡菜单按钮 -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- 导航链接（按钮样式） -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="btn-primary">首页</a></li>
+                <li><a href="#about" class="btn-primary">关于</a></li>
+                
+                <li class="dropdown">
+                    <a href="#Activity" class="btn-primary">社团活动</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#MC" class="btn-success">模拟法庭</a></li>
+                        <li><a href="#MUN" class="btn-success">模拟联合国</a></li>
+                    </ul>
+                </li>
+                
+                
+            </ul>
+        </nav>
+        <!-- 全屏滚动容器 -->
+        <div class="fullpage-container">
+            
+            <!-- 第一部分：大图展示 + 倒计时 -->
+<section id="home" class="section">
+    <div class="section-content">
+        <!-- 上半部分：大图展示 -->
+        <div class="hero-image-half">
+            <img src="image/bgimg.webp" alt="政治学社活动">
+            <div class="hero-overlay">
+                <h1 class="hero-title">政治学社</h1>
+                <p class="hero-subtitle">天下兴亡，匹夫有责</p>
+            </div>
+        </div>
+        
+        <!-- 下半部分：倒计时 -->
+        <div class="countdown-section">
+            <canvas id="particlesCanvas"></canvas>
+            <div class="countdown-container">
+                <div class="countdown-header">
+                    <h2>距离2026年</h2>
+                    <div class="divider"></div>
+                    <p class="event-name">"还有"</p>
+                    
+                </div>
+                
+                <div class="countdown-timer" id="countdownTimer">
+                    <div class="time-unit">
+                        <span class="time-number" id="days">00</span>
+                        <span class="time-label">天</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-number" id="hours">00</span>
+                        <span class="time-label">时</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-number" id="minutes">00</span>
+                        <span class="time-label">分</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-number" id="seconds">00</span>
+                        <span class="time-label">秒</span>
+                    </div>
+                </div>
+                
+</section>
+
+            <!-- 第二部分：关于我们 -->
+            <section id="about" class="section">
+                <div class="section-content">
+                    <div class="about-container">
+                        <div class="about-text">
+                            <h2>关于政治学社</h2>
+                            <div class="divider"></div>
+                            <p>政治学社是一个充满活力与创新精神的社团，起源于华南师范大学同名社团，目前有模拟法庭，模拟联合国，时政授课等活动。</p>
+                            
+                        <div class="about-image">
+                            <img src="image/about.webp" alt="关于我们">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <section id="Activity" class="section">
+    <div class="section-content">
+        <div class="activities-intro">
+            <h2>社团活动</h2>
+            <div class="divider"></div>
+            <p class="section-description">探索我们的精彩活动，参与实践，共同成长</p>
+        </div>
+        
+        <div class="activity-buttons-container">
+            <!-- 模拟法庭活动按钮 -->
+            <a href="activity-court.html" class="activity-button">
+                <div class="activity-button-image court-image">
+                    <div class="activity-gradient"></div>
+                    <div class="activity-icon">⚖️</div>
+                </div>
+                <div class="activity-button-content">
+                    <h3>模拟法庭</h3>
+                    <p>体验真实法庭审判，培养法律思维与辩论能力</p>
+                    <div class="activity-details">
+                        <span class="activity-tag">了解法庭流程</span>
+                        <span class="activity-tag">提升法律意识</span>
+                    </div>
+                    <div class="activity-meta">
+                        
+                    </div>
+                    <span class="btn-arrow">查看详情 →</span>
+                </div>
+            </a>
+            
+            <!-- 模拟联合国活动按钮 -->
+            <a href="activity-mun.html" class="activity-button">
+                <div class="activity-button-image mun-image">
+                    <div class="activity-gradient"></div>
+                    <div class="activity-icon">🌍</div>
+                </div>
+                <div class="activity-button-content">
+                    <h3>模拟联合国</h3>
+                    <p>探讨国际议题，培养外交谈判与全球视野</p>
+                    <div class="activity-details">
+                        <span class="activity-tag">体验联合国会场</span>
+                        
+                    </div>
+                    <div class="activity-meta">
+                       
+                    </div>
+                    <span class="btn-arrow">查看详情 →</span>
+                </div>
+            </a>
+        </div>
+        
+        <!-- 查看更多活动 -->
+        <div class="more-activities-link">
+            <p>还有更多精彩活动等你发现</p>
+            <a href="all-activities.html" class="btn-view-all">查看所有活动 →</a>
+            </div>
+        </div>
+    </section>
+        </div>
+    </section>
+        
+    </body>
+
+</html>
