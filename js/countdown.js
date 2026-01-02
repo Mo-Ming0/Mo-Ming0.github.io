@@ -4,7 +4,7 @@
 class SimpleCountdown {
     constructor(targetDate) {
         // 目标时间：2024年12月31日 14:00:00
-        this.targetDate = new Date('2026-01-01T00:00:00');
+        this.targetDate = new Date('2026-02-17T00:00:00');
         
         // 获取显示元素
         this.daysElement = document.getElementById('days');
@@ -117,7 +117,7 @@ class SimpleCountdown {
         const timerContainer = document.getElementById('countdownTimer');
         if (timerContainer) {
             timerContainer.classList.add('countdown-ended');
-            timerContainer.innerHTML = '<div class="event-ended">欢迎来到2026年!!!!!</div>';
+            timerContainer.innerHTML = '<div class="event-ended">新年好呀!!!!!</div>';
         }
         
         // 启动粒子效果
@@ -286,7 +286,7 @@ class SimpleCountdown {
         banner.className = 'celebration-banner';
         banner.innerHTML = `
             <div class="celebration-text">
-                欢迎来到2026年!!!!!
+                新年好呀!!!!!
             </div>
         `;
         
