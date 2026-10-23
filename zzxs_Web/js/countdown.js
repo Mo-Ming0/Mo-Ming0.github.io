@@ -4,7 +4,7 @@
 class SimpleCountdown {
     constructor(targetDate) {
         // 目标时间：2024年12月31日 14:00:00
-        this.targetDate = new Date('2026-01-01T00:00:00');
+        this.targetDate = new Date('2027-01-01T00:00:00');
         
         // 获取显示元素
         this.daysElement = document.getElementById('days');

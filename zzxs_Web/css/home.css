@@ -390,7 +390,10 @@ html, body {
     animation: fadeInUp 1s ease-out 0.3s both;
 }
 
+/*///////////////////////*/
 /* 下半部分：倒计时 */
+/*///////////////////////*/
+
 .countdown-section {
     height: 50%; /* 占据下半部分50% */
     display: flex;
